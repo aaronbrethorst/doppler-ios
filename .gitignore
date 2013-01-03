@@ -1,0 +1,5 @@
+build
+*.xcuserdatad
+.DS_Store
+heroku.xcodeproj/*.mode1v3
+heroku.xcodeproj/*.pbxuser

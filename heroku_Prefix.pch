@@ -1,0 +1,15 @@
+//
+// Prefix header for all source files of the 'heroku' target in the 'heroku' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+    #import <UIKit/UIKit.h>
+	#import "SFHFKeychainUtils.h"
+    #import "HerokuAPIClient.h"
+    #import "SVProgressHUD.h"
+    #import "UIViewController+Additions.h"
+    #define RELEASE_SAFELY(obj) [obj release], obj = nil;
+	#define SFTRACE NSLog(@"%s %d %s", __FILE__, __LINE__, __PRETTY_FUNCTION__, __FUNCTION__)
+	#define IS_IPAD() (UIUserInterfaceIdiomPad == UI_USER_INTERFACE_IDIOM())
+#endif

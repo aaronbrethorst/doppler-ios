@@ -1,0 +1,9 @@
+[submodule "libraries/AFNetworking"]
+	path = libraries/AFNetworking
+	url = git://github.com/gowalla/AFNetworking.git
+[submodule "libraries/JSONKit"]
+	path = libraries/JSONKit
+	url = git://github.com/johnezang/JSONKit.git
+[submodule "libraries/SVProgressHUD"]
+	path = libraries/SVProgressHUD
+	url = git://github.com/samvermette/SVProgressHUD.git
