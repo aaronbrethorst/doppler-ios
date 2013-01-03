@@ -14,7 +14,7 @@
 
 + (HKTableSection*)sectionWithTitle:(NSString*)title
 {
-	HKTableSection *section = [[[HKTableSection alloc] init] autorelease];
+	HKTableSection *section = [[HKTableSection alloc] init];
 	section.title = title;
 	return section;
 }
@@ -39,14 +39,6 @@
 	return [self.rows objectAtIndex:index];
 }
 
-- (void)dealloc
-{
-	self.title = NULL;
-	self.rows = NULL;
-	self.footer = NULL;
-	
-	[super dealloc];
-}
 
 @end
 
@@ -56,7 +48,7 @@
 
 + (HKTableRow*)rowWithTitle:(NSString*)title value:(NSString*)value target:(id)target action:(SEL)action style:(UITableViewCellStyle)style
 {
-	HKTableRow *row = [[[HKTableRow alloc] init] autorelease];
+	HKTableRow *row = [[HKTableRow alloc] init];
 	row.title = title;
 	row.value = value;
 	row.target = target;
@@ -74,8 +66,6 @@
 
 - (void)setTarget:(id)t
 {
-	[t retain];
-	[target release];
 	target = t;
 	[self updateAccessoryType];
 }
@@ -114,13 +104,7 @@
 
 - (void)dealloc
 {
-	self.title = NULL;
-	self.value = NULL;
-	self.target = NULL;
 	self.action = NULL;
-	self.image = NULL;
-	self.metadata = NULL;
 	
-	[super dealloc];
 }
 @end

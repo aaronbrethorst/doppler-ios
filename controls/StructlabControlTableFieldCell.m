@@ -32,9 +32,7 @@
 
 - (void)setControl:(UIView *)c
 {
-	[c retain];
 	[control removeFromSuperview];
-	[control release];
 	control = c;
 
 	if (control)
@@ -59,8 +57,7 @@
 
 - (void)dealloc
 {
-	[control release], control = nil;
-	[super dealloc];
+	control = nil;
 }
 
 @end

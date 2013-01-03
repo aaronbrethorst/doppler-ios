@@ -18,7 +18,7 @@
 	NSMutableArray *appDetails;
 	UIViewController *parent;
 }
-@property(nonatomic,retain) UIViewController *parent;
-@property(nonatomic,retain) App *app;
-@property(nonatomic,retain) NSMutableArray *appDetails;
+@property(nonatomic,strong) UIViewController *parent;
+@property(nonatomic,strong) App *app;
+@property(nonatomic,strong) NSMutableArray *appDetails;
 @end

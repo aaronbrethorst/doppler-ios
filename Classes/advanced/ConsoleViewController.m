@@ -79,10 +79,10 @@
 
 - (IBAction)showHistory:(id)sender
 {
-	ConsoleHistoryTableViewController *hist = [[[ConsoleHistoryTableViewController alloc] initWithStyle:UITableViewStylePlain] autorelease];
+	ConsoleHistoryTableViewController *hist = [[ConsoleHistoryTableViewController alloc] initWithStyle:UITableViewStylePlain];
 	hist.history = history;
 	hist.delegate = self;
-	UINavigationController *nav = [[[UINavigationController alloc] initWithRootViewController:hist] autorelease];
+	UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:hist];
 	
 	if (IS_IPAD())
 	{
@@ -202,7 +202,7 @@
 - (void)herokuConsoleTTYError:(ASIHTTPRequest*)request
 {
 	[self hideLoadingUI];
-	UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Error" message:[[request error] localizedDescription] delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Try Again",nil] autorelease];
+	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:[[request error] localizedDescription] delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Try Again",nil];
 	[alert show];
 }
 
@@ -257,18 +257,10 @@
 - (void)viewDidUnload
 {
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
-	RELEASE_SAFELY(commandField);
-	RELEASE_SAFELY(historyPopover);
 	self.console = NULL;
 	self.consoleID = NULL;
 	[super viewDidUnload];
 }
 
-- (void)dealloc
-{
-	self.app = NULL;
-	self.parent = NULL;
-	[super dealloc];
-}
 
 @end

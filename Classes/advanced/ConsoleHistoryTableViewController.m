@@ -22,7 +22,7 @@
 	
 	if (!IS_IPAD())
 	{
-		self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Close",@"") style:UIBarButtonItemStyleBordered target:self action:@selector(close:)] autorelease];
+		self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Close",@"") style:UIBarButtonItemStyleBordered target:self action:@selector(close:)];
 	}
 }
 
@@ -61,7 +61,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil)
 	{
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
 	
 	cell.textLabel.text = [self.history objectAtIndex:indexPath.row];
@@ -105,9 +105,7 @@
 
 - (void)dealloc
 {
-	self.history = NULL;
 	self.delegate = NULL;
-    [super dealloc];
 }
 
 

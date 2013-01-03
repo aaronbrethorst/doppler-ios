@@ -41,8 +41,6 @@
 
 - (void)setApp:(App *)a
 {
-	[a retain];
-	[app release];
 	app = a;
 	
 	if (app)
@@ -82,7 +80,7 @@
 	
 	if (nil == cell)
 	{
-		cell = [[[UITableViewCell alloc] initWithStyle:style reuseIdentifier:identifier] autorelease];
+		cell = [[UITableViewCell alloc] initWithStyle:style reuseIdentifier:identifier];
 	}
 	return cell;
 }
@@ -176,10 +174,7 @@
 
 - (void)dealloc
 {
-	self.parent = NULL;
 	self.app = NULL;
-	self.appDetails = NULL;
-	[super dealloc];
 }
 
 @end

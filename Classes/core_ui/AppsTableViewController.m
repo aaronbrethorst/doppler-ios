@@ -40,7 +40,7 @@
 		self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
 	}
 
-    self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(loadData)] autorelease];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(loadData)];
 
 	[self loadData];
 }
@@ -76,7 +76,7 @@
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 	if (cell == nil)
 	{
-		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
+		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
 
 		if (![self iPad])
 		{
@@ -104,7 +104,7 @@
 	}
 	else
 	{
-		HKTabBarController *hkTab = [[[HKTabBarController alloc] initWithNibName:@"HKTabBarController" bundle:nil] autorelease];
+		HKTabBarController *hkTab = [[HKTabBarController alloc] initWithNibName:@"HKTabBarController" bundle:nil];
 		hkTab.app = [self.apps objectAtIndex:indexPath.row];
 		[[self navigationController] pushViewController:hkTab animated:YES];
 	}
@@ -119,13 +119,6 @@
 	[super viewDidUnload];
 }
 
-- (void)dealloc
-{
-	RELEASE_SAFELY(detailViewController);
-
-	self.apps = NULL;
-	[super dealloc];
-}
 
 @end
 

@@ -30,8 +30,8 @@
 		[self.picker selectRow:(self.initialValue - 1) inComponent:0 animated:NO];
 	}
 	self.subjectLabel.text = [NSString stringWithFormat:@"Adjust the number of %@s your application needs.",[self.subject lowercaseString]];
-	self.navigationItem.leftBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStyleBordered target:self action:@selector(cancel:)] autorelease];
-	self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(done:)] autorelease];
+	self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStyleBordered target:self action:@selector(cancel:)];
+	self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(done:)];
 }
 
 - (void)didReceiveMemoryWarning
@@ -49,9 +49,7 @@
 
 - (void)dealloc
 {
-	self.subject = NULL;
 	self.delegate = NULL;
-	[super dealloc];
 }
 
 ///////////

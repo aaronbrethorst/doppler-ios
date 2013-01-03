@@ -70,7 +70,7 @@
 - (void)loadRPMData
 {
 	NSURL *URL = [NSURL URLWithString:@"http://rpm.newrelic.com/accounts.xml?include=application_health"];
-	self.rpmRequest = [[[ASIHTTPRequest alloc] initWithURL:URL] autorelease];
+	self.rpmRequest = [[ASIHTTPRequest alloc] initWithURL:URL];
 	[self.rpmRequest addRequestHeader:@"X-LICENSE-KEY" value:self.licenseKey];
 	self.rpmRequest.delegate = self;
 	self.rpmRequest.didFinishSelector = @selector(requestDidFinish:);
@@ -107,7 +107,6 @@
 			[self.appDetails addObject:section];
 		}
 		
-		[doc release];
 		[self.tableView reloadData];
 		[self hideLoadingUI];
 	}
@@ -137,11 +136,6 @@
 }
 
 
-- (void)dealloc
-{
-	self.licenseKey = NULL;
-	[super dealloc];
-}
 
 
 @end

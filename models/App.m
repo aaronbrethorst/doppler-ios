@@ -31,7 +31,6 @@
 	{
 		App *a = [[App alloc] initWithCXMLNode:elt];
 		[array addObject:a];
-		[a release];
 	}
 	
 	[array sortUsingSelector:@selector(compare:)];
@@ -162,31 +161,19 @@
 	self.databaseTables = -1;
 	self.hitsLastHour = -1;
 	self.bandwidthLastHour = -1;
-	self.webURL = NULL;
-	self.gitURL = NULL;
-	self.cronNextRun = NULL;
-	self.cronFinishedAt = NULL;
-	self.createdAt = NULL;
 	self.dynos = -1;
 	self.appID = -1;
-	self.name = NULL;
 	self.repoSize = -1;
 	self.slugSize = -1;
-	self.stack = NULL;
 	self.workers = -1;
-	self.createStatus = NULL;
-	self.repoMigrateStatus = NULL;
-	self.domainName = NULL;
-	self.owner = NULL;
 	
-	[super dealloc];
 }
 
 - (NSDateFormatter*)cronFormatter
 {
-	NSDateFormatter *cronFormatter = [[[NSDateFormatter alloc] init] autorelease];
+	NSDateFormatter *cronFormatter = [[NSDateFormatter alloc] init];
 	[cronFormatter setFormatterBehavior:NSDateFormatterBehavior10_4];
-	[cronFormatter setLocale:[[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"] autorelease]];    
+	[cronFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];    
 	[cronFormatter setDateFormat:@"EEE LLL dd HH:mm:ss ZZZ yyyy"];
 	return cronFormatter;
 }

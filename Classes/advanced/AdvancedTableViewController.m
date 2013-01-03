@@ -54,36 +54,32 @@
 
 - (IBAction)rake:(id)sender
 {
-	RakeTableViewController *rake = [[[RakeTableViewController alloc] initWithStyle:UITableViewStyleGrouped] autorelease];
+	RakeTableViewController *rake = [[RakeTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
 	rake.app = self.app;
 	[self.parent.navigationController pushViewController:rake animated:YES];
 }
 
 - (IBAction)console:(id)sender
 {
-	ConsoleViewController *console = [[[ConsoleViewController alloc] init] autorelease];
+	ConsoleViewController *console = [[ConsoleViewController alloc] init];
 	console.app = self.app;
 	[self.parent.navigationController pushViewController:console animated:YES];
 }
 
 - (IBAction)configVariables:(id)sender
 {
-	ConfigVariablesTableViewController *config = [[[ConfigVariablesTableViewController alloc] initWithStyle:UITableViewStyleGrouped] autorelease];
+	ConfigVariablesTableViewController *config = [[ConfigVariablesTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
 	config.app = self.app;
 	[self.parent.navigationController pushViewController:config animated:YES];
 }
 
 - (IBAction)processes:(id)sender
 {
-	ProcessesTableViewController *ps = [[[ProcessesTableViewController alloc] initWithStyle:UITableViewStyleGrouped] autorelease];
+	ProcessesTableViewController *ps = [[ProcessesTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
 	ps.app = self.app;
 	[self.parent.navigationController pushViewController:ps animated:YES];
 }
 
-- (void)dealloc
-{
-	[super dealloc];
-}
 
 @end
 

@@ -13,7 +13,15 @@
 
 @synthesize usernames;
 
-SYNTHESIZE_SINGLETON_FOR_CLASS(HerokuCredentials);
++ (HerokuCredentials*)sharedHerokuCredentials
+{
+    static dispatch_once_t pred = 0;
+    __strong static id _sharedObject = nil;
+    dispatch_once(&pred, ^{
+        _sharedObject = [[HerokuCredentials alloc] init];
+    });
+    return _sharedObject;
+}
 
 - (id)init
 {
@@ -33,7 +41,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(HerokuCredentials);
 
 - (void)deleteUserAtIndex:(int)index
 {
-	NSString *username = [[usernames objectAtIndex:index] retain];
+	NSString *username = [usernames objectAtIndex:index];
 	[usernames removeObjectAtIndex:index];
 	
 	[credentials removeObjectForKey:username];

@@ -51,15 +51,15 @@
 {
 	NSString *username;
 	NSString *apiKey;
-	NSString *host;
-	id<HerokuDelegate> delegate;
+	NSString *__weak host;
+	id<HerokuDelegate> __weak delegate;
 	ASIHTTPRequest *currentRequest;
 }
-@property(nonatomic,retain) ASIHTTPRequest* currentRequest;
-@property(nonatomic,retain) NSString *username;
-@property(nonatomic,retain) NSString *apiKey;
-@property(nonatomic,readonly) NSString *host;
-@property(nonatomic,assign) id<HerokuDelegate> delegate;
+@property(nonatomic,strong) ASIHTTPRequest* currentRequest;
+@property(nonatomic,strong) NSString *username;
+@property(nonatomic,strong) NSString *apiKey;
+@property(weak, nonatomic,readonly) NSString *host;
+@property(nonatomic,weak) id<HerokuDelegate> delegate;
 - (void)list;
 - (void)info:(NSString*)appName;
 - (void)addons;

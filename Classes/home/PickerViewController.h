@@ -18,7 +18,7 @@
 @interface PickerViewController : UIViewController
 {
 	UIPickerView *picker;
-	id<PickerViewControllerDelegate> delegate;
+	id<PickerViewControllerDelegate> __weak delegate;
 	NSString *subject;
 	int initialValue;
 	int currentValue;
@@ -27,8 +27,8 @@
 }
 @property(nonatomic,assign) BOOL allowsZero;
 @property(nonatomic,assign) int initialValue;
-@property(nonatomic,retain) NSString *subject;
-@property(nonatomic,assign) id<PickerViewControllerDelegate> delegate;
-@property(nonatomic,retain) IBOutlet UIPickerView *picker;
-@property(nonatomic,retain) IBOutlet UILabel *subjectLabel;
+@property(nonatomic,strong) NSString *subject;
+@property(nonatomic,weak) id<PickerViewControllerDelegate> delegate;
+@property(nonatomic,strong) IBOutlet UIPickerView *picker;
+@property(nonatomic,strong) IBOutlet UILabel *subjectLabel;
 @end

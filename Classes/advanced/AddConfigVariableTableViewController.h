@@ -19,11 +19,11 @@
 	UITextField *key;
 	UITextField *value;
 	
-	id<ConfigVariableDelegate> delegate;
+	id<ConfigVariableDelegate> __weak delegate;
 }
-@property(nonatomic,assign) id<ConfigVariableDelegate> delegate;
-@property(nonatomic,retain) App *app;
-@property(nonatomic,retain) UITextField *key;
-@property(nonatomic,retain) UITextField *value;
+@property(nonatomic,weak) id<ConfigVariableDelegate> delegate;
+@property(nonatomic,strong) App *app;
+@property(nonatomic,strong) UITextField *key;
+@property(nonatomic,strong) UITextField *value;
 + (UINavigationController*)navigableControllerWithApp:(App*)app delegate:(id<ConfigVariableDelegate>)delegate;
 @end

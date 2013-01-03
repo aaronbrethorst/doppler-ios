@@ -21,7 +21,7 @@
 	
 	Heroku *heroku;
 }
-@property(nonatomic,retain) IBOutlet UIWindow *window;
+@property(nonatomic,strong) IBOutlet UIWindow *window;
 - (void)deleteConsoleSession:(NSNotification*)note;
 @end
 

@@ -15,10 +15,10 @@
 
 + (UINavigationController*)navigableControllerWithApp:(App*)app delegate:(id<ConfigVariableDelegate>)delegate
 {
-	AddConfigVariableTableViewController *add = [[[AddConfigVariableTableViewController alloc] initWithStyle:UITableViewStyleGrouped] autorelease];
+	AddConfigVariableTableViewController *add = [[AddConfigVariableTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
 	add.app = app;
 	add.delegate = delegate;
-	UINavigationController *nav = [[[UINavigationController alloc] initWithRootViewController:add] autorelease];
+	UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:add];
 	
 	if (UIUserInterfaceIdiomPad == UI_USER_INTERFACE_IDIOM())
 	{
@@ -59,8 +59,8 @@
 	value.autocapitalizationType = UITextAutocapitalizationTypeNone;
 	value.returnKeyType = UIReturnKeyDone;
 	
-	self.navigationItem.leftBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStyleBordered target:self action:@selector(cancel:)] autorelease];
-	self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Add" style:UIBarButtonItemStyleDone target:self action:@selector(done:)] autorelease];
+	self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStyleBordered target:self action:@selector(cancel:)];
+	self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Add" style:UIBarButtonItemStyleDone target:self action:@selector(done:)];
 	
 	[key becomeFirstResponder];
 }
@@ -128,7 +128,7 @@
 	
 	if (nil == cell)
 	{
-		cell = [[[StructlabNamedTextFieldCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+		cell = [[StructlabNamedTextFieldCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
 	}
 	
 	if (0 == indexPath.row)
@@ -170,9 +170,6 @@
 }
 
 
-- (void)dealloc {
-    [super dealloc];
-}
 
 
 @end

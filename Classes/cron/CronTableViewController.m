@@ -56,16 +56,12 @@
 
 - (IBAction)cronLogs:(id)sender
 {
-	LogsViewController *logs = [[[LogsViewController alloc] init] autorelease];
+	LogsViewController *logs = [[LogsViewController alloc] init];
 	logs.herokuSelector = @selector(cronLogs:);
 	logs.app = self.app;
 	logs.title = NSLocalizedString(@"Cron Logs",@"");
 	[self.parent.navigationController pushViewController:logs animated:YES];
 }
 
-- (void)dealloc
-{
-	[super dealloc];
-}
 
 @end

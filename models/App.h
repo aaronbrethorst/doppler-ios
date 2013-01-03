@@ -66,27 +66,27 @@
 	NSDate *cronNextRun;
 	NSDate *cronFinishedAt;
 }
-@property(nonatomic,retain) NSDate *createdAt;
+@property(nonatomic,strong) NSDate *createdAt;
 @property(nonatomic,assign) int dynos;
 @property(nonatomic,assign) int appID;
-@property(nonatomic,retain) NSString *name;
+@property(nonatomic,strong) NSString *name;
 @property(nonatomic,assign) int repoSize;
 @property(nonatomic,assign) int slugSize;
-@property(nonatomic,retain) NSString *stack;
+@property(nonatomic,strong) NSString *stack;
 @property(nonatomic,assign) int workers;
-@property(nonatomic,retain) NSString *createStatus;
-@property(nonatomic,retain) NSString *repoMigrateStatus;
-@property(nonatomic,retain) NSString *domainName;
-@property(nonatomic,retain) NSString *owner;
+@property(nonatomic,strong) NSString *createStatus;
+@property(nonatomic,strong) NSString *repoMigrateStatus;
+@property(nonatomic,strong) NSString *domainName;
+@property(nonatomic,strong) NSString *owner;
 
 @property(nonatomic,assign) double databaseSize;
 @property(nonatomic,assign) int databaseTables;
 @property(nonatomic,assign) int hitsLastHour;
 @property(nonatomic,assign) double bandwidthLastHour;
-@property(nonatomic,retain) NSString *webURL;
-@property(nonatomic,retain) NSString *gitURL;
-@property(nonatomic,retain) NSDate *cronNextRun;
-@property(nonatomic,retain) NSDate *cronFinishedAt;
+@property(nonatomic,strong) NSString *webURL;
+@property(nonatomic,strong) NSString *gitURL;
+@property(nonatomic,strong) NSDate *cronNextRun;
+@property(nonatomic,strong) NSDate *cronFinishedAt;
 
 + (NSArray*)appsWithXMLString:(NSString*)xmlString;
 - (id)initWithCXMLNode:(CXMLNode*)elt;

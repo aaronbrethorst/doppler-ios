@@ -2,18 +2,27 @@
 PODS:
 - AFNetworking (1.1.0)
 - JSONKit (1.4)
+- Reachability (3.1.0)
+- SBJson (3.1.1)
+- SFHFKeychainUtils (0.0.1)
 - SVProgressHUD (0.8)
 - TouchXML (0.1)
 
 DEPENDENCIES:
 - AFNetworking (~> 1.1.0)
 - JSONKit (~> 1.4.0)
+- Reachability (~> 3.1.0)
+- SBJson (~> 3.1.1)
+- SFHFKeychainUtils (~> 0.0.1)
 - SVProgressHUD (= 0.8)
-- TouchXML
+- TouchXML (~> 0.1)
 
 SPEC CHECKSUMS:
   AFNetworking: 761a418233d280c1e0580bcb76ff9cb4c3073d17
   JSONKit: 0e3367114e2799047082628156e09893d8268f91
+  Reachability: 1c8584c5f26fa776695efef95caaa50402c94cfb
+  SBJson: d917ef596960a977b6c20235a90810bc306a48f0
+  SFHFKeychainUtils: b76aa7a39f07eb6ff97ab94b582e789f50d7ec5a
   SVProgressHUD: 51042a14e3a716efdbdd73cbb2181fb23ee94389
   TouchXML: 0fb977f0bdd2ce2e5d0790c80751769459708810
 

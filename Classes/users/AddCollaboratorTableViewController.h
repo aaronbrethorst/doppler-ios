@@ -18,11 +18,11 @@
 @interface AddCollaboratorTableViewController : HKTableViewController <UITextFieldDelegate>
 {
 	App *app;
-	id<AddCollaboratorTableViewControllerDelegate> delegate;
+	id<AddCollaboratorTableViewControllerDelegate> __weak delegate;
 	
 	UITextField *emailField;
 }
-@property(nonatomic,retain) App *app;
-@property(nonatomic,assign) id<AddCollaboratorTableViewControllerDelegate> delegate;
+@property(nonatomic,strong) App *app;
+@property(nonatomic,weak) id<AddCollaboratorTableViewControllerDelegate> delegate;
 + (UINavigationController*)navigableControllerWithApp:(App*)app delegate:(id<AddCollaboratorTableViewControllerDelegate>)delegate;
 @end

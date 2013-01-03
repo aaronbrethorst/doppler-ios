@@ -70,13 +70,6 @@
 	self.webToolbar = NULL;
 }
 
-- (void)dealloc
-{
-	self.URL = NULL;
-	self.text = NULL;
-	
-    [super dealloc];
-}
 
 - (void)trySettingTitle
 {

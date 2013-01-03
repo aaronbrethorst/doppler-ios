@@ -35,13 +35,13 @@
 		header = [[HeaderView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 50)];
 		header.textField.text = self.serviceCommand;
 		[self.view addSubview:header];	
-		self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Run" style:UIBarButtonItemStyleDone target:self action:@selector(run:)] autorelease];
+		self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Run" style:UIBarButtonItemStyleDone target:self action:@selector(run:)];
 		webView.frame = CGRectMake(0, 76, self.view.frame.size.width, self.view.bounds.size.height - header.frame.size.height);
 	}
 	else
 	{
 		webView.frame = self.view.frame;
-		self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(run:)] autorelease];
+		self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(run:)];
 	}
 }
 
@@ -69,7 +69,6 @@
 	NSMutableString *page = [[NSMutableString alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"pre_webpage" ofType:@"html"]];
 	[page replaceOccurrencesOfString:@"${CONTENT}" withString:response options:NSLiteralSearch range:NSMakeRange(0, [page length])];
 	[webView loadHTMLString:page baseURL:nil];
-	[page release];
 	
 	self.navigationItem.rightBarButtonItem.enabled = YES;
 	if (self.showHeader)
@@ -79,12 +78,4 @@
 	[self hideLoadingUI];
 }
 
-- (void)dealloc
-{
-	RELEASE_SAFELY(webView);
-	RELEASE_SAFELY(header);
-	self.app = NULL;
-	self.serviceCommand = NULL;
-	[super dealloc];
-}
 @end

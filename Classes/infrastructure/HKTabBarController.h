@@ -35,16 +35,16 @@
 	
 	BOOL receivedMemoryWarning;
 }
-@property(nonatomic,retain) NSMutableArray *viewControllers;
-@property(nonatomic,retain) NSMutableArray *tabBarItems;
-@property(nonatomic,retain) IBOutlet UITabBar *tabBar;
-@property(nonatomic,retain) IBOutlet UIView *tabContentView;
-@property(nonatomic,retain) IBOutlet UIView *noAccounts;
-@property(nonatomic,retain) IBOutlet UIButton *chooseApp;
-@property(nonatomic,retain) IBOutlet UIButton *addButton;
-@property(nonatomic,retain) IBOutlet UIView *chooseAppView;
-@property(nonatomic,retain) UIViewController *selectedViewController;
-@property(nonatomic,retain) App *app;
+@property(nonatomic,strong) NSMutableArray *viewControllers;
+@property(nonatomic,strong) NSMutableArray *tabBarItems;
+@property(nonatomic,strong) IBOutlet UITabBar *tabBar;
+@property(nonatomic,strong) IBOutlet UIView *tabContentView;
+@property(nonatomic,strong) IBOutlet UIView *noAccounts;
+@property(nonatomic,strong) IBOutlet UIButton *chooseApp;
+@property(nonatomic,strong) IBOutlet UIButton *addButton;
+@property(nonatomic,strong) IBOutlet UIView *chooseAppView;
+@property(nonatomic,strong) UIViewController *selectedViewController;
+@property(nonatomic,strong) App *app;
 
 - (void)showError:(NSString*)message;
 - (void)loadData;

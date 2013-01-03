@@ -18,12 +18,12 @@
 	NSString *configVariableValue;
 	
 	UITextField *valueField;
-	id<ConfigVariableDelegate> delegate;
+	id<ConfigVariableDelegate> __weak delegate;
 }
-@property(nonatomic,assign) id<ConfigVariableDelegate> delegate;
-@property(nonatomic,retain) App *app;
-@property(nonatomic,retain) NSString *configVariableKey;
-@property(nonatomic,retain) NSString *configVariableValue;
+@property(nonatomic,weak) id<ConfigVariableDelegate> delegate;
+@property(nonatomic,strong) App *app;
+@property(nonatomic,strong) NSString *configVariableKey;
+@property(nonatomic,strong) NSString *configVariableValue;
 + (UINavigationController*)navigableControllerWithApp:(App*)app key:(NSString*)key value:(NSString*)value delegate:(id<ConfigVariableDelegate>)delegate;
 - (IBAction)cancel:(id)sender;
 - (IBAction)done:(id)sender;

@@ -84,7 +84,7 @@
 
 - (IBAction)showNewRelic:(id)sender
 {
-	NewRelicTableViewController *rpm = [[[NewRelicTableViewController alloc] initWithStyle:UITableViewStyleGrouped] autorelease];
+	NewRelicTableViewController *rpm = [[NewRelicTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
 	rpm.parent = self.parent;
 	rpm.app = self.app;
 	[self deselectTableSelection];
@@ -93,7 +93,7 @@
 
 - (IBAction)showWebPage:(id)sender
 {
-	WebViewController *wvc = [[[WebViewController alloc] init] autorelease];
+	WebViewController *wvc = [[WebViewController alloc] init];
 	wvc.URL = [NSURL URLWithString:[[sender metadata] description]];
 	wvc.loadTitleFromDocument = YES;
 	[self deselectTableSelection];
@@ -114,10 +114,6 @@
 }
 
 
-- (void)dealloc
-{
-    [super dealloc];
-}
 
 
 @end

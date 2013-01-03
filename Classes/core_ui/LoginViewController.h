@@ -15,8 +15,8 @@
 	UITextField *usernameField;
 	UITextField *passwordField;
 	UISwitch *passwordSwitch;
-	id<LoginViewControllerDelegate> delegate;
+	id<LoginViewControllerDelegate> __weak delegate;
 }
-@property(nonatomic,assign) id<LoginViewControllerDelegate> delegate;
+@property(nonatomic,weak) id<LoginViewControllerDelegate> delegate;
 + (UINavigationController*)navigableLoginViewControllerWithDelegate:(id<LoginViewControllerDelegate>)delegate;
 @end

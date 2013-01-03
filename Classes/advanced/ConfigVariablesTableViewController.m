@@ -40,10 +40,6 @@
 	[super viewDidUnload];
 }
 
-- (void)dealloc
-{
-	[super dealloc];
-}
 
 #pragma mark -
 #pragma mark View lifecycle
@@ -53,7 +49,7 @@
 	[super viewDidLoad];
 	self.title = NSLocalizedString(@"Config Variables",@"");
 	
-	self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(add:)] autorelease];
+	self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(add:)];
 	[self reload];
 }
 
@@ -80,7 +76,7 @@
 
 - (void)herokuConfigVarsDidFinish:(id)response
 {
-	NSDictionary *dict = (NSDictionary*)[response retain];
+	NSDictionary *dict = (NSDictionary*)response;
 	
 	[self.appDetails removeAllObjects];
 	
@@ -106,7 +102,6 @@
 		[self.appDetails addObject:addSection];
 	}
 	
-	[dict release];
 	
 	[self hideLoadingUI];
 	[self.tableView reloadData];

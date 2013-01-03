@@ -52,10 +52,5 @@
 	[UIView drawLineInRect:CGRectMake(0, 64.5, 320, 0) colors:line];
 }
 
-- (void)dealloc
-{
-	RELEASE_SAFELY(textField);
-	[super dealloc];
-}
 
 @end

@@ -14,6 +14,6 @@
 	UIView *control;
 }
 + (CGFloat)rowHeight;
-@property (nonatomic, retain) UIView *control;
+@property (nonatomic, strong) UIView *control;
 
 @end

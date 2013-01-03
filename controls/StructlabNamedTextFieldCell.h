@@ -12,5 +12,5 @@
 {
 	UIView *control;
 }
-@property (nonatomic, retain) UIView *control;
+@property (nonatomic, strong) UIView *control;
 @end

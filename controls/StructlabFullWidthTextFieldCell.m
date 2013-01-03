@@ -32,9 +32,7 @@
 
 - (void)setTextField:(UITextField *)tf
 {
-	[tf retain];
 	[textField removeFromSuperview];
-	[textField release];
 	textField = tf;
 	
 	if (textField)
@@ -57,7 +55,6 @@
 
 - (void)dealloc
 {
-	[textField release], textField = nil;
-	[super dealloc];
+	textField = nil;
 }
 @end

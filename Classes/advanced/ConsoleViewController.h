@@ -24,9 +24,9 @@
 	NSMutableArray *history;
 	UIPopoverController *historyPopover;
 }
-@property(nonatomic,retain) NSString *consoleID;
-@property(nonatomic,retain) App *app;
-@property(nonatomic,retain) UIViewController *parent;
-@property(nonatomic,retain) UITextView *console;
+@property(nonatomic,strong) NSString *consoleID;
+@property(nonatomic,strong) App *app;
+@property(nonatomic,strong) UIViewController *parent;
+@property(nonatomic,strong) UITextView *console;
 - (IBAction)showHistory:(id)sender;
 @end

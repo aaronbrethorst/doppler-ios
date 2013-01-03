@@ -32,7 +32,7 @@
     [super viewDidLoad];
 	[self loadData:nil];
 
-	self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(loadData:)] autorelease];
+	self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(loadData:)];
 }
 
 - (IBAction)loadData:(id)sender
@@ -44,9 +44,7 @@
 
 - (void)dealloc
 {
-	self.app = NULL;
 	self.herokuSelector = NULL;
-    [super dealloc];
 }
 
 - (void)herokuReceivedLogs:(NSString*)logs
@@ -84,6 +82,5 @@
 	[self.webView loadHTMLString:string baseURL:nil];
 	[self hideLoadingUI];
 	self.navigationItem.rightBarButtonItem.enabled = YES;
-	[string release];
 }
 @end

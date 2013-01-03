@@ -28,29 +28,21 @@
 		930177B511FB87B9004CA158 /* NSDictionary+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 930177B411FB87B9004CA158 /* NSDictionary+Additions.m */; };
 		930179F911FBD39B004CA158 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 930179F711FBD39B004CA158 /* Default.png */; };
 		930179FA11FBD39B004CA158 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 930179F811FBD39B004CA158 /* Default@2x.png */; };
-		930D566F11F8E86100DD6D06 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 930D566011F8E86100DD6D06 /* ASIAuthenticationDialog.m */; };
-		930D567011F8E86100DD6D06 /* ASIDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 930D566311F8E86100DD6D06 /* ASIDownloadCache.m */; };
-		930D567111F8E86100DD6D06 /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 930D566511F8E86100DD6D06 /* ASIFormDataRequest.m */; };
-		930D567211F8E86100DD6D06 /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 930D566711F8E86100DD6D06 /* ASIHTTPRequest.m */; };
-		930D567311F8E86100DD6D06 /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 930D566B11F8E86100DD6D06 /* ASIInputStream.m */; };
-		930D567411F8E86100DD6D06 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 930D566D11F8E86100DD6D06 /* ASINetworkQueue.m */; };
-		930D567811F8E87500DD6D06 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 930D567711F8E87500DD6D06 /* Reachability.m */; };
+		930D566F11F8E86100DD6D06 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 930D566011F8E86100DD6D06 /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = " -fno-objc-arc"; }; };
+		930D567011F8E86100DD6D06 /* ASIDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 930D566311F8E86100DD6D06 /* ASIDownloadCache.m */; settings = {COMPILER_FLAGS = " -fno-objc-arc"; }; };
+		930D567111F8E86100DD6D06 /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 930D566511F8E86100DD6D06 /* ASIFormDataRequest.m */; settings = {COMPILER_FLAGS = " -fno-objc-arc"; }; };
+		930D567211F8E86100DD6D06 /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 930D566711F8E86100DD6D06 /* ASIHTTPRequest.m */; settings = {COMPILER_FLAGS = " -fno-objc-arc"; }; };
+		930D567311F8E86100DD6D06 /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 930D566B11F8E86100DD6D06 /* ASIInputStream.m */; settings = {COMPILER_FLAGS = " -fno-objc-arc"; }; };
+		930D567411F8E86100DD6D06 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 930D566D11F8E86100DD6D06 /* ASINetworkQueue.m */; settings = {COMPILER_FLAGS = " -fno-objc-arc"; }; };
 		930D567A11F8E89E00DD6D06 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 930D567911F8E89E00DD6D06 /* CFNetwork.framework */; };
 		930D567C11F8E89E00DD6D06 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 930D567B11F8E89E00DD6D06 /* MobileCoreServices.framework */; };
 		930D567E11F8E89E00DD6D06 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 930D567D11F8E89E00DD6D06 /* SystemConfiguration.framework */; };
 		930D568011F8E89E00DD6D06 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 930D567F11F8E89E00DD6D06 /* libz.dylib */; };
 		930D572511F8EF4A00DD6D06 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 930D572411F8EF4A00DD6D06 /* NSString+Additions.m */; };
 		930D579411F907EA00DD6D06 /* App.m in Sources */ = {isa = PBXBuildFile; fileRef = 930D579311F907EA00DD6D06 /* App.m */; };
-		930D595911F971B800DD6D06 /* SFHFKeychainUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 930D595811F971B800DD6D06 /* SFHFKeychainUtils.m */; };
 		930D596811F971DD00DD6D06 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 930D596711F971DD00DD6D06 /* Security.framework */; };
 		930D598B11F9739700DD6D06 /* StructlabFullWidthTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 930D598A11F9739700DD6D06 /* StructlabFullWidthTextFieldCell.m */; };
 		930D5CD911FA3EFA00DD6D06 /* HKTableSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 930D5CD811FA3EFA00DD6D06 /* HKTableSection.m */; };
-		930D5DDF11FA558500DD6D06 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 930D5DD411FA558500DD6D06 /* NSObject+SBJSON.m */; };
-		930D5DE011FA558500DD6D06 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 930D5DD611FA558500DD6D06 /* NSString+SBJSON.m */; };
-		930D5DE111FA558500DD6D06 /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 930D5DD811FA558500DD6D06 /* SBJSON.m */; };
-		930D5DE211FA558500DD6D06 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 930D5DDA11FA558500DD6D06 /* SBJsonBase.m */; };
-		930D5DE311FA558500DD6D06 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 930D5DDC11FA558500DD6D06 /* SBJsonParser.m */; };
-		930D5DE411FA558500DD6D06 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 930D5DDE11FA558500DD6D06 /* SBJsonWriter.m */; };
 		9318733712149AF700AE520C /* computer.png in Resources */ = {isa = PBXBuildFile; fileRef = 9318733512149AF700AE520C /* computer.png */; };
 		9318733812149AF700AE520C /* computer@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9318733612149AF700AE520C /* computer@2x.png */; };
 		9318733B12149B0B00AE520C /* list.png in Resources */ = {isa = PBXBuildFile; fileRef = 9318733912149B0B00AE520C /* list.png */; };
@@ -180,8 +172,6 @@
 		930D566C11F8E86100DD6D06 /* ASINetworkQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASINetworkQueue.h; sourceTree = "<group>"; };
 		930D566D11F8E86100DD6D06 /* ASINetworkQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASINetworkQueue.m; sourceTree = "<group>"; };
 		930D566E11F8E86100DD6D06 /* ASIProgressDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIProgressDelegate.h; sourceTree = "<group>"; };
-		930D567611F8E87500DD6D06 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
-		930D567711F8E87500DD6D06 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		930D567911F8E89E00DD6D06 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		930D567B11F8E89E00DD6D06 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		930D567D11F8E89E00DD6D06 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -191,27 +181,11 @@
 		930D579211F907EA00DD6D06 /* App.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = App.h; sourceTree = "<group>"; };
 		930D579311F907EA00DD6D06 /* App.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = App.m; sourceTree = "<group>"; };
 		930D57B511F954AC00DD6D06 /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
-		930D58B411F965FD00DD6D06 /* SynthesizeSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SynthesizeSingleton.h; path = Classes/SynthesizeSingleton.h; sourceTree = "<group>"; };
-		930D595711F971B800DD6D06 /* SFHFKeychainUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SFHFKeychainUtils.h; path = Classes/SFHFKeychainUtils.h; sourceTree = "<group>"; };
-		930D595811F971B800DD6D06 /* SFHFKeychainUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SFHFKeychainUtils.m; path = Classes/SFHFKeychainUtils.m; sourceTree = "<group>"; };
 		930D596711F971DD00DD6D06 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		930D598911F9739700DD6D06 /* StructlabFullWidthTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StructlabFullWidthTextFieldCell.h; sourceTree = "<group>"; };
 		930D598A11F9739700DD6D06 /* StructlabFullWidthTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StructlabFullWidthTextFieldCell.m; sourceTree = "<group>"; };
 		930D5CD711FA3EFA00DD6D06 /* HKTableSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HKTableSection.h; sourceTree = "<group>"; };
 		930D5CD811FA3EFA00DD6D06 /* HKTableSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HKTableSection.m; sourceTree = "<group>"; };
-		930D5DD211FA558500DD6D06 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
-		930D5DD311FA558500DD6D06 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
-		930D5DD411FA558500DD6D06 /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
-		930D5DD511FA558500DD6D06 /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
-		930D5DD611FA558500DD6D06 /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBJSON.m"; sourceTree = "<group>"; };
-		930D5DD711FA558500DD6D06 /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJSON.h; sourceTree = "<group>"; };
-		930D5DD811FA558500DD6D06 /* SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJSON.m; sourceTree = "<group>"; };
-		930D5DD911FA558500DD6D06 /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonBase.h; sourceTree = "<group>"; };
-		930D5DDA11FA558500DD6D06 /* SBJsonBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonBase.m; sourceTree = "<group>"; };
-		930D5DDB11FA558500DD6D06 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
-		930D5DDC11FA558500DD6D06 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
-		930D5DDD11FA558500DD6D06 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
-		930D5DDE11FA558500DD6D06 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		9318733512149AF700AE520C /* computer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = computer.png; sourceTree = "<group>"; };
 		9318733612149AF700AE520C /* computer@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "computer@2x.png"; sourceTree = "<group>"; };
 		9318733912149B0B00AE520C /* list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = list.png; sourceTree = "<group>"; };
@@ -391,12 +365,10 @@
 				9328A7A41695FF1300863E90 /* Default-568h@2x.png */,
 				9301767511FB609F004CA158 /* readme.md */,
 				930173EC11FA923E004CA158 /* icons */,
-				930D5DD111FA558500DD6D06 /* json */,
 				930D5CD611FA3EF200DD6D06 /* tables */,
 				930D598811F9739700DD6D06 /* controls */,
 				930D579111F907E400DD6D06 /* models */,
 				930D572211F8EF4A00DD6D06 /* categories */,
-				930D567511F8E87500DD6D06 /* reachability */,
 				930D565E11F8E86100DD6D06 /* asihttprequest */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -413,9 +385,6 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				930D595711F971B800DD6D06 /* SFHFKeychainUtils.h */,
-				930D595811F971B800DD6D06 /* SFHFKeychainUtils.m */,
-				930D58B411F965FD00DD6D06 /* SynthesizeSingleton.h */,
 				32CA4F630368D1EE00C91783 /* heroku_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 			);
@@ -529,15 +498,6 @@
 			path = asihttprequest;
 			sourceTree = "<group>";
 		};
-		930D567511F8E87500DD6D06 /* reachability */ = {
-			isa = PBXGroup;
-			children = (
-				930D567611F8E87500DD6D06 /* Reachability.h */,
-				930D567711F8E87500DD6D06 /* Reachability.m */,
-			);
-			path = reachability;
-			sourceTree = "<group>";
-		};
 		930D572211F8EF4A00DD6D06 /* categories */ = {
 			isa = PBXGroup;
 			children = (
@@ -590,26 +550,6 @@
 				930D5CD811FA3EFA00DD6D06 /* HKTableSection.m */,
 			);
 			path = tables;
-			sourceTree = "<group>";
-		};
-		930D5DD111FA558500DD6D06 /* json */ = {
-			isa = PBXGroup;
-			children = (
-				930D5DD211FA558500DD6D06 /* JSON.h */,
-				930D5DD311FA558500DD6D06 /* NSObject+SBJSON.h */,
-				930D5DD411FA558500DD6D06 /* NSObject+SBJSON.m */,
-				930D5DD511FA558500DD6D06 /* NSString+SBJSON.h */,
-				930D5DD611FA558500DD6D06 /* NSString+SBJSON.m */,
-				930D5DD711FA558500DD6D06 /* SBJSON.h */,
-				930D5DD811FA558500DD6D06 /* SBJSON.m */,
-				930D5DD911FA558500DD6D06 /* SBJsonBase.h */,
-				930D5DDA11FA558500DD6D06 /* SBJsonBase.m */,
-				930D5DDB11FA558500DD6D06 /* SBJsonParser.h */,
-				930D5DDC11FA558500DD6D06 /* SBJsonParser.m */,
-				930D5DDD11FA558500DD6D06 /* SBJsonWriter.h */,
-				930D5DDE11FA558500DD6D06 /* SBJsonWriter.m */,
-			);
-			path = json;
 			sourceTree = "<group>";
 		};
 		9325A224120E116F00449683 /* Resources-iPad */ = {
@@ -893,18 +833,10 @@
 				930D567211F8E86100DD6D06 /* ASIHTTPRequest.m in Sources */,
 				930D567311F8E86100DD6D06 /* ASIInputStream.m in Sources */,
 				930D567411F8E86100DD6D06 /* ASINetworkQueue.m in Sources */,
-				930D567811F8E87500DD6D06 /* Reachability.m in Sources */,
 				930D572511F8EF4A00DD6D06 /* NSString+Additions.m in Sources */,
 				930D579411F907EA00DD6D06 /* App.m in Sources */,
-				930D595911F971B800DD6D06 /* SFHFKeychainUtils.m in Sources */,
 				930D598B11F9739700DD6D06 /* StructlabFullWidthTextFieldCell.m in Sources */,
 				930D5CD911FA3EFA00DD6D06 /* HKTableSection.m in Sources */,
-				930D5DDF11FA558500DD6D06 /* NSObject+SBJSON.m in Sources */,
-				930D5DE011FA558500DD6D06 /* NSString+SBJSON.m in Sources */,
-				930D5DE111FA558500DD6D06 /* SBJSON.m in Sources */,
-				930D5DE211FA558500DD6D06 /* SBJsonBase.m in Sources */,
-				930D5DE311FA558500DD6D06 /* SBJsonParser.m in Sources */,
-				930D5DE411FA558500DD6D06 /* SBJsonWriter.m in Sources */,
 				930177B511FB87B9004CA158 /* NSDictionary+Additions.m in Sources */,
 				937B086E11FCF0050063DC05 /* HeaderView.m in Sources */,
 				937B088A11FCF0AE0063DC05 /* UIView+TKCategory.m in Sources */,
@@ -954,13 +886,14 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = "$(inherited)";
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Structlab, LLC";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = heroku_Prefix.pch;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "heroku-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = heroku;
@@ -976,11 +909,12 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = "$(inherited)";
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Structlab, LLC";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = heroku_Prefix.pch;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "heroku-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = heroku;

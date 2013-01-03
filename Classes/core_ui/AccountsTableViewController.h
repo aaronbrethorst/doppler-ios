@@ -16,6 +16,6 @@
 {
 	HKTabBarController *detailViewController;
 }
-@property(nonatomic,retain) HKTabBarController *detailViewController;
+@property(nonatomic,strong) HKTabBarController *detailViewController;
 - (IBAction)add:(id)sender;
 @end

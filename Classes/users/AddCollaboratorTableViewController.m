@@ -17,10 +17,10 @@
 
 + (UINavigationController*)navigableControllerWithApp:(App*)app delegate:(id<AddCollaboratorTableViewControllerDelegate>)delegate
 {
-	AddCollaboratorTableViewController *add = [[[AddCollaboratorTableViewController alloc] initWithStyle:UITableViewStyleGrouped] autorelease];
+	AddCollaboratorTableViewController *add = [[AddCollaboratorTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
 	add.app = app;
 	add.delegate = delegate;
-	UINavigationController *nav = [[[UINavigationController alloc] initWithRootViewController:add] autorelease];
+	UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:add];
 	if (UIUserInterfaceIdiomPad == UI_USER_INTERFACE_IDIOM())
 	{
 		nav.modalPresentationStyle = UIModalPresentationFormSheet;
@@ -44,8 +44,8 @@
 {
     [super viewDidLoad];
 
-	self.navigationItem.leftBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStyleBordered target:self action:@selector(cancel:)] autorelease];
-	self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Add" style:UIBarButtonItemStyleDone target:self action:@selector(done:)] autorelease];
+	self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStyleBordered target:self action:@selector(cancel:)];
+	self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Add" style:UIBarButtonItemStyleDone target:self action:@selector(done:)];
 	
 	emailField = [[UITextField alloc] initWithFrame:CGRectZero];
 	emailField.delegate = self;
@@ -104,7 +104,7 @@
 	
 	if (nil == cell)
 	{
-		cell = [[[StructlabNamedTextFieldCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+		cell = [[StructlabNamedTextFieldCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
 	}
 
 	cell.textLabel.text = @"Email:";
@@ -123,17 +123,9 @@
     // Relinquish ownership any cached data, images, etc that aren't in use.
 }
 
-- (void)viewDidUnload 
-{
-	RELEASE_SAFELY(emailField);
-}
-
-
 - (void)dealloc
 {
 	self.delegate = NULL;
-	self.app = NULL;
-    [super dealloc];
 }
 
 

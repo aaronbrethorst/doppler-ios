@@ -50,7 +50,7 @@
 {
 	searchResults = [[NSMutableArray alloc] init];
 
-	UISearchBar *searchBar = [[[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, self.tableView.frame.size.width, 0)] autorelease];
+	UISearchBar *searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, self.tableView.frame.size.width, 0)];
 	searchBar.delegate = self;
 	[searchBar sizeToFit];
 	self.tableView.tableHeaderView = searchBar;
@@ -154,7 +154,7 @@
 		UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:searchIdentifier];
 		if (nil == cell)
 		{
-			cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:searchIdentifier] autorelease];
+			cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:searchIdentifier];
 		}
 		NSDictionary *dict = [searchResults objectAtIndex:indexPath.row];
 		cell.textLabel.text = [dict objectForKey:kTaskName];
@@ -172,7 +172,7 @@
 	if (tableView == searchDisplayController.searchResultsTableView)
 	{
 		NSDictionary *dict = [searchResults objectAtIndex:indexPath.row];
-		RunServiceViewController *run = [[[RunServiceViewController alloc] init] autorelease];
+		RunServiceViewController *run = [[RunServiceViewController alloc] init];
 		run.app = self.app;
 		run.serviceCommand = [dict objectForKey:kTaskName];
 		run.title = NSLocalizedString(@"Rake Task",@"");
@@ -210,7 +210,7 @@
 - (void)performTask:(id)sender
 {
 	HKTableRow *row = sender;
-	RunServiceViewController *run = [[[RunServiceViewController alloc] init] autorelease];
+	RunServiceViewController *run = [[RunServiceViewController alloc] init];
 	run.app = self.app;
 	run.serviceCommand = row.title;
 	run.title = NSLocalizedString(@"Rake Task",@"");
@@ -237,11 +237,4 @@
 #pragma mark -
 #pragma mark Teardown
 
-- (void)dealloc
-{
-	RELEASE_SAFELY(searchResults);
-	RELEASE_SAFELY(rakeTasks);
-	RELEASE_SAFELY(searchDisplayController);
-	[super dealloc];
-}
 @end

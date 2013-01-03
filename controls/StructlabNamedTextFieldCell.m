@@ -28,9 +28,7 @@
 
 - (void)setControl:(UIView *)c
 {
-	[c retain];
 	[control removeFromSuperview];
-	[control release];
 	control = c;
 	
 	if (control)
@@ -51,10 +49,5 @@
 	self.detailTextLabel.hidden = YES;
 }
 
-- (void)dealloc
-{
-	RELEASE_SAFELY(control);
-	[super dealloc];
-}
 
 @end

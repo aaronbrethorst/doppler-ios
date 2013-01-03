@@ -15,7 +15,7 @@
 {
 	Heroku *heroku;
 }
-@property(nonatomic,readonly) Heroku *heroku;
+@property(weak, nonatomic,readonly) Heroku *heroku;
 
 - (void)showError:(NSString*)message;
 - (void)showMessage:(NSString*)message withTitle:(NSString*)title;

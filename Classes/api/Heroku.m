@@ -10,7 +10,7 @@
 #import "ASIHTTPRequest.h"
 #import "NSString+Additions.h"
 #import "NSDictionary+Additions.h"
-#import "JSON.h"
+#import "SBJson.h"
 
 @interface Heroku ()
 - (void)addHeadersToRequest:(ASIHTTPRequest*)request;
@@ -36,7 +36,7 @@
 {
 	if (self = [super init])
 	{
-		host = [NSString stringWithString:@"heroku.com"];
+		host = @"heroku.com";
 		delegate = nil;
 
 		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(removePassword:) name:@"NukeHerokuPasswords" object:nil];
@@ -86,7 +86,7 @@
 - (ASIHTTPRequest*)deleteRequestForResource:(NSString*)resource didFinish:(SEL)didFinish didFail:(SEL)didFail
 {
 	NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.heroku.com/%@", resource]];
-	ASIHTTPRequest *request = [[[ASIHTTPRequest alloc] initWithURL:URL] autorelease];
+	ASIHTTPRequest *request = [[ASIHTTPRequest alloc] initWithURL:URL];
 	request.requestMethod = @"DELETE";
 	[self addHeadersToRequest:request];
 	request.delegate = self;
@@ -99,7 +99,7 @@
 - (ASIHTTPRequest*)putRequestForResource:(NSString*)resource withFormData:(NSDictionary*)dict
 {
     NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.heroku.com/%@", resource]];
-	ASIHTTPRequest *request = [[[ASIHTTPRequest alloc] initWithURL:URL] autorelease];
+	ASIHTTPRequest *request = [[ASIHTTPRequest alloc] initWithURL:URL];
 	request.requestMethod = @"PUT";
 	[self addHeadersToRequest:request];
 	request.delegate = self;
@@ -113,7 +113,7 @@
 - (ASIHTTPRequest*)postRequestForResource:(NSString*)resource withFormData:(NSData*)data
 {
 	NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.heroku.com/%@", resource]];
-	ASIHTTPRequest *request = [[[ASIHTTPRequest alloc] initWithURL:URL] autorelease];
+	ASIHTTPRequest *request = [[ASIHTTPRequest alloc] initWithURL:URL];
 	request.requestMethod = @"POST";
 	[self addHeadersToRequest:request];
 	request.delegate = self;
@@ -131,7 +131,7 @@
 
 - (ASIHTTPRequest*)requestForURL:(NSURL*)URL didFinish:(SEL)didFinish didFail:(SEL)didFail contentType:(NSString*)contentType
 {
-	ASIHTTPRequest* request = [[[ASIHTTPRequest alloc] initWithURL:URL] autorelease];
+	ASIHTTPRequest* request = [[ASIHTTPRequest alloc] initWithURL:URL];
 	[self addHeadersToRequest:request];
 	if (contentType)
 	{
@@ -203,7 +203,6 @@
 				}
 			}
 
-			[doc release];
 			doc = nil;
 		}
 
@@ -476,7 +475,6 @@
 
 			[collaborators addObject:[NSDictionary dictionaryWithObjectsAndKeys:access,kCollaboratorAccessKey,email,kCollaboratorEmailKey,nil]];
 		}
-		[doc release];
 		[self broadcast:@selector(herokuReceivedCollaborators:) withObject:collaborators];
 	}
 	else
@@ -588,7 +586,7 @@
 
 - (void)readChunkFromURL:(NSURL*)url forAppName:(NSString*)appName withResults:(NSString*)results
 {
-	self.currentRequest = [[[ASIHTTPRequest alloc] initWithURL:url] autorelease];
+	self.currentRequest = [[ASIHTTPRequest alloc] initWithURL:url];
 	[self addHeadersToRequest:self.currentRequest];
 
     if ([url user])
@@ -716,7 +714,7 @@
 - (void)consoleTTYForApp:(NSString*)appName
 {
 	NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.heroku.com/apps/%@/consoles", appName]];
-	self.currentRequest = [[[ASIHTTPRequest alloc] initWithURL:URL] autorelease];
+	self.currentRequest = [[ASIHTTPRequest alloc] initWithURL:URL];
 	self.currentRequest.requestMethod = @"POST";
 	[self addHeadersToRequest:self.currentRequest];
 	self.currentRequest.delegate = self;
@@ -836,11 +834,7 @@
 {
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
 	[self.currentRequest cancel];
-	RELEASE_SAFELY(host);
 	self.delegate = NULL;
-	self.username = NULL;
-	self.apiKey = NULL;
-	[super dealloc];
 }
 
 @end

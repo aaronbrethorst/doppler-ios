@@ -16,6 +16,6 @@
 	NSArray *apps;
 	HKTabBarController *detailViewController;
 }
-@property(nonatomic,retain) HKTabBarController *detailViewController;
-@property(nonatomic,retain) NSArray *apps;
+@property(nonatomic,strong) HKTabBarController *detailViewController;
+@property(nonatomic,strong) NSArray *apps;
 @end

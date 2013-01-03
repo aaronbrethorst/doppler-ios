@@ -55,7 +55,7 @@
 
 - (void)showMessage:(NSString*)message withTitle:(NSString*)title
 {
-	UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] autorelease];
+	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
 	[alert show];
 }
 
@@ -68,7 +68,7 @@
 	
 	if ([MFMailComposeViewController canSendMail])
 	{
-		MFMailComposeViewController *vc = [[[MFMailComposeViewController alloc] init] autorelease];
+		MFMailComposeViewController *vc = [[MFMailComposeViewController alloc] init];
 		vc.mailComposeDelegate = self;
 		[vc setSubject:subject];
 		[vc setToRecipients:recipients];
@@ -134,8 +134,6 @@
 - (void)dealloc
 {
 	heroku.delegate = NULL;
-	RELEASE_SAFELY(heroku);
-    [super dealloc];
 }
 
 - (void)deselectTableSelection

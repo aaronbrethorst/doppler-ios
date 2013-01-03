@@ -36,7 +36,7 @@
 - (void)showMessage:(NSString*)message withTitle:(NSString*)title;
 - (void)composeEmailWithSubject:(NSString*)subject toRecipients:(NSArray*)recipients body:(NSString*)body;
 //iPad
-@property (nonatomic, retain) UIPopoverController *popoverController;
+@property (nonatomic, strong) UIPopoverController *popoverController;
 @end
 
 @implementation HKTabBarController
@@ -139,14 +139,11 @@
 	self.chooseApp = NULL;
 	self.chooseAppView = NULL;
 	self.addButton = NULL;
-	RELEASE_SAFELY(actionSheet);
 	[super viewDidUnload];
 }
 
 - (void)setApp:(App *)a
 {
-	[a retain];
-	[app release];
 	app = a;
 	
 	if (app)
@@ -222,9 +219,8 @@
 {
 	CXMLDocument *doc = [[CXMLDocument alloc] initWithXMLString:obj options:0 error:nil];
 	[self.app populateWithAppXMLNode:[doc rootElement]];
-	[doc release];
 	
-	self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(showActionMenu:)] autorelease];
+	self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(showActionMenu:)];
 	
 	self.viewControllers = [NSMutableArray array];
 	self.tabBarItems = [NSMutableArray array];
@@ -245,38 +241,38 @@
 
 - (void)createHomeViewController
 {
-	HomeTableViewController *homeVC = [[[HomeTableViewController alloc] initWithStyle:UITableViewStyleGrouped] autorelease];
+	HomeTableViewController *homeVC = [[HomeTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
 	homeVC.parent = self;
 	homeVC.app = self.app;
 	[self.viewControllers addObject:homeVC];
-	[self.tabBarItems addObject:[[[UITabBarItem alloc] initWithTitle:NSLocalizedString(@"Home",@"") image:[UIImage imageNamed:@"home.png"] tag:0] autorelease]];
+	[self.tabBarItems addObject:[[UITabBarItem alloc] initWithTitle:NSLocalizedString(@"Home",@"") image:[UIImage imageNamed:@"home.png"] tag:0]];
 }
 
 - (void)createUsersViewController
 {
-	UsersTableViewController *users = [[[UsersTableViewController alloc] initWithStyle:UITableViewStyleGrouped] autorelease];
+	UsersTableViewController *users = [[UsersTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
 	users.app = self.app;
 	users.parent = self;
 	[self.viewControllers addObject:users];
-	[self.tabBarItems addObject:[[[UITabBarItem alloc] initWithTitle:NSLocalizedString(@"Users",@"") image:[UIImage imageNamed:@"users.png"] tag:1] autorelease]];
+	[self.tabBarItems addObject:[[UITabBarItem alloc] initWithTitle:NSLocalizedString(@"Users",@"") image:[UIImage imageNamed:@"users.png"] tag:1]];
 }
 
 - (void)createAddonsViewController
 {
-	AddonsTableViewController *addons = [[[AddonsTableViewController alloc] initWithStyle:UITableViewStyleGrouped] autorelease];
+	AddonsTableViewController *addons = [[AddonsTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
 	addons.app = app;
 	addons.parent = self;
 	[self.viewControllers addObject:addons];
-	[self.tabBarItems addObject:[[[UITabBarItem alloc] initWithTitle:NSLocalizedString(@"Addons",@"") image:[UIImage imageNamed:@"switch.png"] tag:2] autorelease]];
+	[self.tabBarItems addObject:[[UITabBarItem alloc] initWithTitle:NSLocalizedString(@"Addons",@"") image:[UIImage imageNamed:@"switch.png"] tag:2]];
 }
 
 - (void)createCronViewController
 {
-	CronTableViewController *cron = [[[CronTableViewController alloc] initWithStyle:UITableViewStyleGrouped] autorelease];
+	CronTableViewController *cron = [[CronTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
 	cron.app = self.app;
 	cron.parent = self;
 	[self.viewControllers addObject:cron];
-	[self.tabBarItems addObject:[[[UITabBarItem alloc] initWithTitle:NSLocalizedString(@"Cron",@"") image:[UIImage imageNamed:@"clock.png"] tag:3] autorelease]];
+	[self.tabBarItems addObject:[[UITabBarItem alloc] initWithTitle:NSLocalizedString(@"Cron",@"") image:[UIImage imageNamed:@"clock.png"] tag:3]];
 }
 
 - (void)createAdvancedViewController
@@ -284,33 +280,33 @@
 	if (IS_IPAD())
 	{
 		
-		RakeTableViewController *rake = [[[RakeTableViewController alloc] initWithStyle:UITableViewStyleGrouped] autorelease];
+		RakeTableViewController *rake = [[RakeTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
 		[self configureViewController:rake title:NSLocalizedString(@"Rake",@"")
 							imageName:@"tools.png"
 								  tag:4];
 	
-		ConsoleViewController *console = [[[ConsoleViewController alloc] init] autorelease];		
+		ConsoleViewController *console = [[ConsoleViewController alloc] init];		
 		[self configureViewController:console title:NSLocalizedString(@"Console",@"")
 							imageName:@"computer.png"
 								  tag:5];
 		
-		ProcessesTableViewController *ps = [[[ProcessesTableViewController alloc] initWithStyle:UITableViewStyleGrouped] autorelease];		
+		ProcessesTableViewController *ps = [[ProcessesTableViewController alloc] initWithStyle:UITableViewStyleGrouped];		
 		[self configureViewController:ps title:NSLocalizedString(@"Processes",@"")
 							imageName:@"20-gear2.png"
 								  tag:6];
 
-		ConfigVariablesTableViewController *config = [[[ConfigVariablesTableViewController alloc] initWithStyle:UITableViewStyleGrouped] autorelease];
+		ConfigVariablesTableViewController *config = [[ConfigVariablesTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
 		[self configureViewController:config title:NSLocalizedString(@"Config Vars",@"")
 							imageName:@"list.png"
 								  tag:7];
 	}
 	else
 	{
-		AdvancedTableViewController *advanced = [[[AdvancedTableViewController alloc] initWithStyle:UITableViewStyleGrouped] autorelease];
+		AdvancedTableViewController *advanced = [[AdvancedTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
 		advanced.app = self.app;
 		advanced.parent = self;
 		[self.viewControllers addObject:advanced];
-		[self.tabBarItems addObject:[[[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemMore tag:4] autorelease]];
+		[self.tabBarItems addObject:[[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemMore tag:4]];
 	}
 }
 
@@ -320,20 +316,15 @@
 	[vc setParent:self];
 
 	[self.viewControllers addObject:vc];
-	[self.tabBarItems addObject:[[[UITabBarItem alloc] initWithTitle:aTitle image:[UIImage imageNamed:imageName] tag:tag] autorelease]];
+	[self.tabBarItems addObject:[[UITabBarItem alloc] initWithTitle:aTitle image:[UIImage imageNamed:imageName] tag:tag]];
 }
 
 - (void)dealloc
 {
-	RELEASE_SAFELY(popoverController);
-
 	heroku.delegate = NULL;
-	RELEASE_SAFELY(heroku);
 	
-	self.tabBarItems = NULL;
 
 	self.app = NULL;
-	[super dealloc];
 }
 
 #pragma mark -
@@ -358,7 +349,7 @@
 
 - (void)showMessage:(NSString*)message withTitle:(NSString*)title
 {
-	UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] autorelease];
+	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
 	[alert show];
 }
 
@@ -371,7 +362,7 @@
 	
 	if ([MFMailComposeViewController canSendMail])
 	{
-		MFMailComposeViewController *vc = [[[MFMailComposeViewController alloc] init] autorelease];
+		MFMailComposeViewController *vc = [[MFMailComposeViewController alloc] init];
 		vc.mailComposeDelegate = self;
 		[vc setSubject:subject];
 		[vc setToRecipients:recipients];
@@ -488,7 +479,7 @@
 
 - (void)finalizeMaintenanceMode:(NSTimer*)t
 {
-	WebViewController *wvc = [[[WebViewController alloc] init] autorelease];
+	WebViewController *wvc = [[WebViewController alloc] init];
 	wvc.URL = [NSURL URLWithString:self.app.webURL];
 	wvc.loadTitleFromDocument = YES;
 	[self hideLoadingUI];

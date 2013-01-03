@@ -20,8 +20,8 @@
 	HeaderView *header;
 	BOOL showHeader;
 }
-@property(nonatomic,retain) App *app;
-@property(nonatomic,retain) NSString *serviceCommand;
+@property(nonatomic,strong) App *app;
+@property(nonatomic,strong) NSString *serviceCommand;
 @property(nonatomic,assign) BOOL showHeader;
 - (IBAction)run:(id)sender;
 @end

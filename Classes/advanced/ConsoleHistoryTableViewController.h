@@ -16,9 +16,9 @@
 @interface ConsoleHistoryTableViewController : UITableViewController
 {
 	NSArray *history;
-	id<HistoryDelegate> delegate;
+	id<HistoryDelegate> __weak delegate;
 }
-@property(nonatomic,assign) id<HistoryDelegate> delegate;
-@property(nonatomic,retain) NSArray *history;
+@property(nonatomic,weak) id<HistoryDelegate> delegate;
+@property(nonatomic,strong) NSArray *history;
 - (IBAction)close:(id)sender;
 @end

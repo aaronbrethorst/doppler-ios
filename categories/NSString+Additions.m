@@ -11,12 +11,12 @@
 @implementation NSString (Additions)
 - (NSString*)reallyURLEscape
 {
-	NSString* escaped = (NSString *)CFURLCreateStringByAddingPercentEscapes(NULL,
+	NSString* escaped = (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(NULL,
 																			(CFStringRef)self,
 																			NULL,
 																			(CFStringRef)@".!*'();:@&=+$,/?%#[]",
-																			kCFStringEncodingUTF8 );
-	return [escaped autorelease];
+																			kCFStringEncodingUTF8 ));
+	return escaped;
 }
 
 + (NSString *)humanFormattedNumber:(int)theSize

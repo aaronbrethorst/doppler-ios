@@ -14,5 +14,5 @@
 {
 	ASIHTTPRequest *processesRequest;
 }
-@property(nonatomic,retain) ASIHTTPRequest *processesRequest;
+@property(nonatomic,strong) ASIHTTPRequest *processesRequest;
 @end

@@ -30,11 +30,11 @@
 		accounts = [[AccountsTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
 		navigation = [[UINavigationController alloc] initWithRootViewController:accounts];
 		
-		appTabs = [[[HKTabBarController alloc] initWithNibName:@"HKTabBarController-iPad" bundle:nil] autorelease];
+		appTabs = [[HKTabBarController alloc] initWithNibName:@"HKTabBarController-iPad" bundle:nil];
 		accounts.detailViewController = appTabs;
 		
 		splitView = [[UISplitViewController alloc] init];
-		splitView.viewControllers = [NSArray arrayWithObjects:navigation,[[[UINavigationController alloc] initWithRootViewController:appTabs] autorelease], nil];
+		splitView.viewControllers = [NSArray arrayWithObjects:navigation,[[UINavigationController alloc] initWithRootViewController:appTabs], nil];
 		splitView.delegate = appTabs;
 		
 		[window addSubview:splitView.view];
@@ -93,8 +93,8 @@
 	heroku.apiKey = [[HerokuCredentials sharedHerokuCredentials] passwordForUsername:heroku.username];
     [[HerokuAPIClient sharedClient] setAuthorizationHeaderWithUsername:heroku.username password:heroku.apiKey];
 	
-	NSString *consoleID = [[[[note object] objectForKey:@"ConsoleID"] retain] autorelease];
-	NSString *appName = [[[[note object] objectForKey:@"AppName"] retain] autorelease];
+	NSString *consoleID = [[note object] objectForKey:@"ConsoleID"];
+	NSString *appName = [[note object] objectForKey:@"AppName"];
 	
 	[heroku deleteConsole:consoleID forApp:appName];
 }
@@ -108,15 +108,6 @@
 }
 
 
-- (void)dealloc
-{
-	RELEASE_SAFELY(accounts);
-	RELEASE_SAFELY(navigation);
-	RELEASE_SAFELY(splitView);
-	RELEASE_SAFELY(heroku);
-	[window release];
-	[super dealloc];
-}
 
 
 @end

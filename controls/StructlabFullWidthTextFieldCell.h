@@ -13,5 +13,5 @@
 	UITextField *textField;
 }
 + (CGFloat)rowHeight;
-@property (nonatomic, retain) UITextField *textField;
+@property (nonatomic, strong) UITextField *textField;
 @end

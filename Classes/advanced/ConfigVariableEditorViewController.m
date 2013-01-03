@@ -14,12 +14,12 @@
 
 + (UINavigationController*)navigableControllerWithApp:(App*)app key:(NSString*)key value:(NSString*)value delegate:(id<ConfigVariableDelegate>)delegate
 {
-	ConfigVariableEditorViewController *editor = [[[ConfigVariableEditorViewController alloc] initWithStyle:UITableViewStyleGrouped] autorelease];
+	ConfigVariableEditorViewController *editor = [[ConfigVariableEditorViewController alloc] initWithStyle:UITableViewStyleGrouped];
 	editor.app = app;
 	editor.configVariableKey = key;
 	editor.configVariableValue = value;
 	editor.delegate = delegate;
-	UINavigationController *nav = [[[UINavigationController alloc] initWithRootViewController:editor] autorelease];
+	UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:editor];
 	
 	if (UIUserInterfaceIdiomPad == UI_USER_INTERFACE_IDIOM())
 	{
@@ -56,8 +56,8 @@
 	valueField.autocapitalizationType = UITextAutocapitalizationTypeNone;
 	valueField.text = self.configVariableValue;
 		
-	self.navigationItem.leftBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStyleBordered target:self action:@selector(cancel:)] autorelease];
-	self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Save" style:UIBarButtonItemStyleDone target:self action:@selector(done:)] autorelease];
+	self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStyleBordered target:self action:@selector(cancel:)];
+	self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Save" style:UIBarButtonItemStyleDone target:self action:@selector(done:)];
 	
 }
 
@@ -135,7 +135,7 @@
 		
 		if (nil == cell)
 		{
-			cell = [[[StructlabNamedTextFieldCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:EditCellIdentifier] autorelease];
+			cell = [[StructlabNamedTextFieldCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:EditCellIdentifier];
 		}
 		
 		cell.textLabel.text = @"Value:";
@@ -151,7 +151,7 @@
 				
 		if (nil == cell)
 		{
-			cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+			cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
 			cell.textLabel.textAlignment = UITextAlignmentCenter;
 		}
 		
@@ -168,7 +168,7 @@
 {
 	if (1 == indexPath.section)
 	{
-		UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Warning" message:@"Are you sure you want to delete this config variable?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Delete", nil] autorelease];
+		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Warning" message:@"Are you sure you want to delete this config variable?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Delete", nil];
 		[alert show];
 	}
 }
@@ -188,14 +188,6 @@
 #pragma mark -
 #pragma mark Memory management
 
-- (void)dealloc
-{
-	self.app = NULL;
-	self.configVariableKey = NULL;
-	self.configVariableValue = NULL;
-	
-	[super dealloc];
-}
 
 
 @end

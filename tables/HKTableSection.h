@@ -15,9 +15,9 @@
 	NSString *footer;
 	NSMutableArray *rows;
 }
-@property(nonatomic,retain) NSString *title;
-@property(nonatomic,retain) NSString *footer;
-@property(nonatomic,retain) NSMutableArray *rows;
+@property(nonatomic,strong) NSString *title;
+@property(nonatomic,strong) NSString *footer;
+@property(nonatomic,strong) NSMutableArray *rows;
 + (HKTableSection*)sectionWithTitle:(NSString*)title;
 - (NSInteger)count;
 - (id)objectAtIndex:(int)index;
@@ -34,11 +34,11 @@
 	UITableViewCellStyle style;
 	UITableViewCellAccessoryType accessoryType;
 }
-@property(nonatomic,retain) NSString *title;
-@property(nonatomic,retain) NSString *value;
-@property(nonatomic,retain) UIImage *image;
-@property(nonatomic,retain) id metadata;
-@property(nonatomic,retain) id target;
+@property(nonatomic,strong) NSString *title;
+@property(nonatomic,strong) NSString *value;
+@property(nonatomic,strong) UIImage *image;
+@property(nonatomic,strong) id metadata;
+@property(nonatomic,strong) id target;
 @property(nonatomic,assign) SEL action;
 @property(nonatomic,assign) UITableViewCellStyle style;
 @property(nonatomic,assign) UITableViewCellAccessoryType accessoryType;

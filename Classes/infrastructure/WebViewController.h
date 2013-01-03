@@ -20,8 +20,8 @@
 }
 @property(nonatomic,assign) BOOL loadTitleFromDocument;
 @property(nonatomic,assign) BOOL hideToolbar;
-@property(nonatomic,retain) NSURL *URL;
-@property(nonatomic,retain) NSString *text;
-@property(nonatomic,retain) IBOutlet UIWebView *webView;
-@property(nonatomic,retain) IBOutlet UIToolbar *webToolbar;
+@property(nonatomic,strong) NSURL *URL;
+@property(nonatomic,strong) NSString *text;
+@property(nonatomic,strong) IBOutlet UIWebView *webView;
+@property(nonatomic,strong) IBOutlet UIToolbar *webToolbar;
 @end

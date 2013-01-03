@@ -18,9 +18,9 @@
 
 + (UINavigationController*)navigableLoginViewControllerWithDelegate:(id<LoginViewControllerDelegate>)delegate
 {
-	LoginViewController *login = [[[LoginViewController alloc] initWithStyle:UITableViewStyleGrouped] autorelease];
+	LoginViewController *login = [[LoginViewController alloc] initWithStyle:UITableViewStyleGrouped];
 	login.delegate = delegate;
-	UINavigationController *nav = [[[UINavigationController alloc] initWithRootViewController:login] autorelease];
+	UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:login];
 
 	if (UIUserInterfaceIdiomPad == UI_USER_INTERFACE_IDIOM())
 	{
@@ -62,8 +62,8 @@
 	passwordSwitch = [[UISwitch alloc] initWithFrame:CGRectZero];
 	passwordSwitch.on = NO;
 
-	self.navigationItem.leftBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStyleBordered target:self action:@selector(cancel:)] autorelease];
-	self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Login" style:UIBarButtonItemStyleDone target:self action:@selector(done:)] autorelease];
+	self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStyleBordered target:self action:@selector(cancel:)];
+	self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Login" style:UIBarButtonItemStyleDone target:self action:@selector(done:)];
 
 	if ([usernameField.text length] == 0)
 	{
@@ -147,7 +147,7 @@
 
 	if (nil == cell)
 	{
-		cell = [[[StructlabNamedTextFieldCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+		cell = [[StructlabNamedTextFieldCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
 	}
 
 	if (0 == indexPath.section)
@@ -184,13 +184,6 @@
 {
 }
 
-- (void)dealloc
-{
-	RELEASE_SAFELY(passwordSwitch);
-	RELEASE_SAFELY(usernameField);
-	RELEASE_SAFELY(passwordField);
-	[super dealloc];
-}
 
 
 @end

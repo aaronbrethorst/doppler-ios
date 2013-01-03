@@ -25,7 +25,7 @@
 }
 @property BOOL isFlipped;
 
-@property (nonatomic, retain) NSDate *lastUpdatedDate;
+@property (nonatomic, strong) NSDate *lastUpdatedDate;
 
 - (void)flipImageAnimated:(BOOL)animated;
 - (void)toggleActivityView:(BOOL)isON;

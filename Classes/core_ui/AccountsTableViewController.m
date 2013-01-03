@@ -39,7 +39,7 @@
     [super viewDidLoad];
 
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
-	self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(add:)] autorelease];
+	self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(add:)];
 	
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(autoSelectAccount:) name:@"LoadHerokuAccount" object:nil];
 	
@@ -87,7 +87,7 @@
 		[[NSUserDefaults standardUserDefaults] synchronize];
 	}
 	
-	AppsTableViewController *apps = [[[AppsTableViewController alloc] initWithStyle:UITableViewStyleGrouped] autorelease];
+	AppsTableViewController *apps = [[AppsTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
 	[detailViewController loadCredentials];
 	apps.detailViewController = self.detailViewController;
 	[self.navigationController pushViewController:apps animated:yn];
@@ -125,7 +125,7 @@
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 	if (cell == nil)
 	{
-		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
 	}
 
 	if (0 == indexPath.section)
@@ -155,11 +155,11 @@
 	}
 	else
 	{
-		UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Warning",@"")
+		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Warning",@"")
 														 message:NSLocalizedString(@"This will remove all of your Heroku passwords.",@"")
 														delegate:self
 											   cancelButtonTitle:NSLocalizedString(@"Cancel",@"")
-											   otherButtonTitles:NSLocalizedString(@"OK",@""),nil] autorelease];
+											   otherButtonTitles:NSLocalizedString(@"OK",@""),nil];
 																				   
 		[alert show];
 		
@@ -213,11 +213,6 @@
 }
 
 
-- (void)dealloc
-{
-	RELEASE_SAFELY(detailViewController);
-	[super dealloc];
-}
 
 
 @end

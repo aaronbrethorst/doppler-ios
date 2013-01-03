@@ -66,7 +66,7 @@
 
 - (void)displayModallyWithNavigationController:(UIViewController*)vc
 {
-	UINavigationController *nav = [[[UINavigationController alloc] initWithRootViewController:vc] autorelease];
+	UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
 	if (UIUserInterfaceIdiomPad == UI_USER_INTERFACE_IDIOM())
 	{
 		nav.modalPresentationStyle = UIModalPresentationFormSheet;
@@ -78,7 +78,7 @@
 - (IBAction)openWebURL:(id)sender
 {
 	HKTableRow *row = (HKTableRow *)sender;
-	WebViewController *web = [[[WebViewController alloc] init] autorelease];
+	WebViewController *web = [[WebViewController alloc] init];
 	web.loadTitleFromDocument = YES;
 	
 	if (![row.value hasPrefix:@"http://"])
@@ -95,7 +95,7 @@
 
 - (IBAction)adjustDynos:(id)sender
 {
-	PickerViewController *picker = [[[PickerViewController alloc] init] autorelease];
+	PickerViewController *picker = [[PickerViewController alloc] init];
 	picker.title = @"Edit Dynos";
 	picker.delegate = self;
 	picker.subject = @"Dyno";
@@ -106,7 +106,7 @@
 
 - (IBAction)adjustWorkers:(id)sender
 {
-	PickerViewController *picker = [[[PickerViewController alloc] init] autorelease];
+	PickerViewController *picker = [[PickerViewController alloc] init];
 	picker.title = @"Edit Workers";
 	picker.delegate = self;
 	picker.subject = @"Worker";
@@ -117,7 +117,7 @@
 
 - (IBAction)appLogs:(id)sender
 {
-	LogsViewController *logs = [[[LogsViewController alloc] init] autorelease];
+	LogsViewController *logs = [[LogsViewController alloc] init];
 	logs.herokuSelector = @selector(logs:);
 	logs.app = self.app;
 	logs.title = NSLocalizedString(@"App Logs",@"");
@@ -127,7 +127,7 @@
 
 - (IBAction)cronLogs:(id)sender
 {
-	LogsViewController *logs = [[[LogsViewController alloc] init] autorelease];
+	LogsViewController *logs = [[LogsViewController alloc] init];
 	logs.herokuSelector = @selector(cronLogs:);
 	logs.app = self.app;
 	logs.title = NSLocalizedString(@"Cron Logs",@"");
@@ -178,7 +178,6 @@
 {
 	CXMLDocument *doc = [[CXMLDocument alloc] initWithXMLString:obj options:0 error:nil];
 	[self.app populateWithAppXMLNode:[doc rootElement]];
-	[doc release];
 	[self populateTable];
 	[self.tableView reloadData];
 	[self hideLoadingUI];
@@ -203,10 +202,6 @@
 }
 
 
-- (void)dealloc
-{
-	[super dealloc];
-}
 
 
 @end

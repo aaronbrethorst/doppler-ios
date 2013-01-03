@@ -15,6 +15,6 @@
 	NSString *licenseKey;
 	ASIHTTPRequest *rpmRequest;
 }
-@property(nonatomic,retain) NSString *licenseKey; 
-@property(nonatomic,retain) ASIHTTPRequest *rpmRequest;
+@property(nonatomic,strong) NSString *licenseKey; 
+@property(nonatomic,strong) ASIHTTPRequest *rpmRequest;
 @end

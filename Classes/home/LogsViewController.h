@@ -16,7 +16,7 @@
 	SEL herokuSelector;
 	App *app;
 }
-@property(nonatomic,retain) App *app;
+@property(nonatomic,strong) App *app;
 @property(nonatomic,assign) SEL herokuSelector;
 - (IBAction)loadData:(id)sender;
 @end
