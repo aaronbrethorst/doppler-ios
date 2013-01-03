@@ -5,7 +5,7 @@ Doppler is a Heroku client that I wrote about two-and-a-half years ago. It hasn'
 
 Check it out in the App Store: https://itunes.apple.com/us/app/doppler-for-heroku/id387552592?mt=8
 
-!(Doppler Screenshot)[https://raw.github.com/aaronbrethorst/doppler-ios/master/doppler_screen.png]
+![Doppler Screenshot](https://raw.github.com/aaronbrethorst/doppler-ios/master/doppler_screen.png)
 
 License
 ===
