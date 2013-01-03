@@ -7,7 +7,7 @@
 //
 
 #import "HerokuAPIClient.h"
-//#import "AFJSONRequestOperation.h"
+#import "AFJSONRequestOperation.h"
 
 NSString * const kHerokuBaseURLString = @"https://api.heroku.com/";
 
@@ -31,7 +31,7 @@ NSString * const kHerokuBaseURLString = @"https://api.heroku.com/";
         return nil;
     }
     
-//    [self registerHTTPOperationClass:[AFJSONRequestOperation class]];
+    [self registerHTTPOperationClass:[AFJSONRequestOperation class]];
     
     [self setDefaultHeader:@"X-Heroku-Api-Version" value:@"2"];
     [self setDefaultHeader:@"Accept" value:@"application/json"];
