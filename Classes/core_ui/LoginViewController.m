@@ -84,14 +84,14 @@
 {
 	if ([usernameField.text length] > 0 && [passwordField.text length] > 0)
 	{
-        [SVProgressHUD showInView:self.view status:NSLocalizedString(@"Logging In...", @"") networkIndicator:YES posY:100];
-
-        [[HerokuAPIClient sharedClient] loginWithUsername:usernameField.text password:passwordField.text success:^(id response) {
-            [[HerokuCredentials sharedHerokuCredentials] addUsername:[response objectForKey:@"email"] password:[response objectForKey:@"api_key"] savePassword:passwordSwitch.on];
+        [SVProgressHUD showWithStatus:NSLocalizedString(@"Logging in...", @"")];
+        
+        [[HerokuAPIClient sharedClient] loginWithUsername:usernameField.text password:passwordField.text success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            [[HerokuCredentials sharedHerokuCredentials] addUsername:[responseObject objectForKey:@"email"] password:[responseObject objectForKey:@"api_key"] savePassword:passwordSwitch.on];
             [delegate reloadCredentialsForUsername:usernameField.text];
             [self hideLoadingUI];
             [self dismissModalViewControllerAnimated:YES];
-        } failure:^(NSError *error) {
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             [self hideLoadingUI];
             [self showError:[error localizedDescription]];
         }];

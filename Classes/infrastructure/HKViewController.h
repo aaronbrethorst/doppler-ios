@@ -19,4 +19,5 @@
 
 - (void)showError:(NSString*)message;
 - (void)loadData;
+- (void)composeEmailWithSubject:(NSString*)subject toRecipients:(NSArray*)recipients body:(NSString*)body;
 @end

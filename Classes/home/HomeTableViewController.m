@@ -143,18 +143,18 @@
 	
 	if ([subject isEqual:@"Worker"])
 	{
-        [[HerokuAPIClient sharedClient] setBambooApp:self.app.name workers:number success:^(id response) {
+        [[HerokuAPIClient sharedClient] setBambooApp:self.app.name workers:number success:^(AFHTTPRequestOperation *operation, id responseObject) {
             [self.heroku info:self.app.name];
-        } failure:^(NSError *error) {
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             [self hideLoadingUI];
             [self showError:[error localizedDescription]];
         }];
 	}
 	else if ([subject isEqual:@"Dyno"])
 	{
-        [[HerokuAPIClient sharedClient] setBambooApp:self.app.name dynos:number success:^(id response) {
+        [[HerokuAPIClient sharedClient] setBambooApp:self.app.name dynos:number success:^(AFHTTPRequestOperation *operation, id responseObject) {
             [self.heroku info:self.app.name];
-        } failure:^(NSError *error) {
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             [self hideLoadingUI];
             [self showError:[error localizedDescription]];
         }];

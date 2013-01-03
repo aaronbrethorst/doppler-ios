@@ -15,7 +15,7 @@ extern NSString * const kHerokuBaseURLString;
 + (HerokuAPIClient*)sharedClient;
 - (id)initWithBaseURL:(NSURL *)url;
 
-- (void)loginWithUsername:(NSString*)aUsername password:(NSString*)aPassword success:(void (^)(id response))success failure:(void (^)(NSError *error))failure;
-- (void)setBambooApp:(NSString*)app dynos:(int)dynos success:(void (^)(id response))success failure:(void (^)(NSError *error))failure;
-- (void)setBambooApp:(NSString*)app workers:(int)workers success:(void (^)(id response))success failure:(void (^)(NSError *error))failure;
+- (void)loginWithUsername:(NSString*)aUsername password:(NSString*)aPassword success:(void (^)(AFHTTPRequestOperation* operation, id responseObject))success failure:(void (^)(AFHTTPRequestOperation* operation, NSError *error))failure;
+- (void)setBambooApp:(NSString*)app dynos:(int)dynos success:(void (^)(AFHTTPRequestOperation* operation, id responseObject))success failure:(void (^)(AFHTTPRequestOperation* operation, NSError *error))failure;
+- (void)setBambooApp:(NSString*)app workers:(int)workers success:(void (^)(AFHTTPRequestOperation* operation, id responseObject))success failure:(void (^)(AFHTTPRequestOperation* operation, NSError *error))failure;
 @end

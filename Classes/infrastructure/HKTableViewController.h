@@ -23,4 +23,5 @@
 - (void)presentLoginViewController;
 - (BOOL)iPad;
 - (void)deselectTableSelection;
+- (void)composeEmailWithSubject:(NSString*)subject toRecipients:(NSArray*)recipients body:(NSString*)body;
 @end

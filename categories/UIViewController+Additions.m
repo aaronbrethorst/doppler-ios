@@ -16,7 +16,7 @@
 
 - (void)showLoadingUIWithText:(NSString*)text
 {
-    [SVProgressHUD showInView:self.view status:text];
+    [SVProgressHUD showWithStatus:text];
 }
 
 - (void)hideLoadingUI

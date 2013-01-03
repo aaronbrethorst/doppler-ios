@@ -1,0 +1,20 @@
+
+PODS:
+- AFNetworking (1.1.0)
+- JSONKit (1.4)
+- SVProgressHUD (0.8)
+- TouchXML (0.1)
+
+DEPENDENCIES:
+- AFNetworking (~> 1.1.0)
+- JSONKit (~> 1.4.0)
+- SVProgressHUD (= 0.8)
+- TouchXML
+
+SPEC CHECKSUMS:
+  AFNetworking: 761a418233d280c1e0580bcb76ff9cb4c3073d17
+  JSONKit: 0e3367114e2799047082628156e09893d8268f91
+  SVProgressHUD: 51042a14e3a716efdbdd73cbb2181fb23ee94389
+  TouchXML: 0fb977f0bdd2ce2e5d0790c80751769459708810
+
+COCOAPODS: 0.16.0

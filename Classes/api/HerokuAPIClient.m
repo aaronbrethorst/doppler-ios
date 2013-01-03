@@ -7,6 +7,7 @@
 //
 
 #import "HerokuAPIClient.h"
+//#import "AFJSONRequestOperation.h"
 
 NSString * const kHerokuBaseURLString = @"https://api.heroku.com/";
 
@@ -30,6 +31,8 @@ NSString * const kHerokuBaseURLString = @"https://api.heroku.com/";
         return nil;
     }
     
+//    [self registerHTTPOperationClass:[AFJSONRequestOperation class]];
+    
     [self setDefaultHeader:@"X-Heroku-Api-Version" value:@"2"];
     [self setDefaultHeader:@"Accept" value:@"application/json"];
     //[self setDefaultHeader:@"Accept" value:@"*/*; q=0.5, application/xml"];
@@ -42,21 +45,21 @@ NSString * const kHerokuBaseURLString = @"https://api.heroku.com/";
 
 #pragma mark - Login
 
-- (void)loginWithUsername:(NSString*)aUsername password:(NSString*)aPassword success:(void (^)(id response))success failure:(void (^)(NSError *error))failure
+- (void)loginWithUsername:(NSString*)aUsername password:(NSString*)aPassword success:(void (^)(AFHTTPRequestOperation* operation, id responseObject))success failure:(void (^)(AFHTTPRequestOperation* operation, NSError *error))failure
 {
     [self postPath:@"login" parameters:[NSDictionary dictionaryWithObjectsAndKeys:aUsername, @"username", aPassword, @"password", nil] success:success failure:failure];
 }
 
 #pragma mark - Dynos
 
-- (void)setBambooApp:(NSString*)app dynos:(int)dynos success:(void (^)(id response))success failure:(void (^)(NSError *error))failure
+- (void)setBambooApp:(NSString*)app dynos:(int)dynos success:(void (^)(AFHTTPRequestOperation* operation, id responseObject))success failure:(void (^)(AFHTTPRequestOperation* operation, NSError *error))failure
 {
     [self putPath:[NSString stringWithFormat:@"apps/%@/dynos", app]
        parameters:[NSDictionary dictionaryWithObject:[NSNumber numberWithInt:dynos] forKey:@"dynos"]
           success:success failure:failure];
 }
 
-- (void)setBambooApp:(NSString*)app workers:(int)workers success:(void (^)(id response))success failure:(void (^)(NSError *error))failure
+- (void)setBambooApp:(NSString*)app workers:(int)workers success:(void (^)(AFHTTPRequestOperation* operation, id responseObject))success failure:(void (^)(AFHTTPRequestOperation* operation, NSError *error))failure
 {
     [self putPath:[NSString stringWithFormat:@"apps/%@/workers", app]
        parameters:[NSDictionary dictionaryWithObject:[NSNumber numberWithInt:workers] forKey:@"workers"]

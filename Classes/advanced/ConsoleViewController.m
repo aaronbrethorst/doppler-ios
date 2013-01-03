@@ -103,7 +103,7 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    [SVProgressHUD showInView:self.view status:NSLocalizedString(@"Loading...", @"") networkIndicator:YES posY:100];
+    [SVProgressHUD showWithStatus:NSLocalizedString(@"Loading...", @"")];
 	console.text = [console.text stringByAppendingFormat:@"%@\n",commandField.text];
 	[self.heroku consoleCommand:commandField.text forApp:self.app.name withConsoleID:self.consoleID];
 	return NO;

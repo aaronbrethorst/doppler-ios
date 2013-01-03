@@ -11,7 +11,6 @@
 
 @interface HKViewController ()
 - (void)showMessage:(NSString*)message withTitle:(NSString*)title;
-- (void)composeEmailWithSubject:(NSString*)subject toRecipients:(NSArray*)recipients body:(NSString*)body;
 @end
 
 
